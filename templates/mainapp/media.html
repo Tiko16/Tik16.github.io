@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<div class="page-banner overlay-dark bg-image" style="background-image: url(
+  {% for a in slidecontext  %}
+ {{ a.slide.url }}
+{% endfor %}
+);">
+
+ <div class="banner-section">
+   <div class="container text-center wow fadeInUp">
+     <nav aria-label="Breadcrumb">
+       <ol class="breadcrumb breadcrumb-dark bg-transparent justify-content-center py-0 mb-2">
+         <li class="breadcrumb-item"><a href="{% url 'Index_View' %}">Home</a></li>
+         <li class="breadcrumb-item active" aria-current="page">Media</li>
+       </ol>
+     </nav>
+     <h1 class="font-weight-normal">Media</h1>
+   </div> <!-- .container -->
+ </div> <!-- .banner-section -->
+</div> <!-- .page-banner -->
+
+<h2 class="text-center mb-5 "> Our Dojkasn asjkfniues sdjngidr dng;iefn dngknf jdngler jndglier jngnlke jngkej kjdnbgleb jdbgljeb djkbglejrbf lkjdblejb lfbleb lkdjbvjlfb lbkfbv jbilgihglr jfbldjfbnl dfctorsOur Doctors</h2>
+<div class="page-section">
+    <div class="container">
+        <div class="row ">
+{% for video in video %}
+<div class="video">
+  <iframe width="540" height="290" src="{{ video.video }}"></iframe>    {% comment %} <source src="https://www.youtube.com/watch?v=V84IycATdvA" type="video/ogg"> {% endcomment %}
+</div>
+{% endfor %}
+
+
+</div>
+</div>
+</div>
+  
+
+<style>
+   .video{
+     margin:15px;
+   }
+ 
+</style>
+
+{% endblock main %}
+
+

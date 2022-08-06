@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block main %}
+{% load i18n %}
+<div class="page-banner overlay-dark bg-image" style="background-image: url(
+  {% for a in slidecontext  %}
+ {{ a.slide.url }}
+{% endfor %}
+);">
+
+ <div class="banner-section">
+   <div class="container text-center wow fadeInUp">
+     <nav aria-label="Breadcrumb">
+       <ol class="breadcrumb breadcrumb-dark bg-transparent justify-content-center py-0 mb-2">
+         <li class="breadcrumb-item"><a href="{% url 'Index_View' %}">{% trans "գլխաոր" %}</a></li>
+         <li class="breadcrumb-item active" aria-current="page">{% trans "բժիշկներ" %}</li>
+       </ol>
+     </nav>
+     <h1 class="font-weight-normal">{% trans "բժիշկներ" %}</h1>
+   </div> <!-- .container -->
+ </div> <!-- .banner-section -->
+</div> <!-- .page-banner -->
+
+
+<div class="page-section pt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <nav aria-label="Breadcrumb">
+            <ol class="breadcrumb bg-transparent py-0 mb-5">
+              <li class="breadcrumb-item"><a href="{% url 'Index_View' %}">{% trans "Home" %}</a></li>
+              <li class="breadcrumb-item"><a href="{% url "News_page_View" %}">{% trans "Blog" %}</a></li>
+              <li class="breadcrumb-item active" aria-current="page">{{ doctury.title }}</li>
+            </ol>
+          </nav>
+        </div>
+      </div> <!-- .row -->
+
+      <div class="row">
+        <div class="col-lg-8">
+          <article class="blog-details">
+            <div class="post-thumb">
+              <img src="{{ doctury.image.url }}" alt="">
+            </div>
+            <div class="post-meta">
+              <div class="post-author">
+                <span class="text-grey">{{ doctury.title }}</span> 
+              </div>
+              <span class="divider">|</span>
+             
+              <div>
+                {% for Doc in Doctors %}
+                <a href="{% url 'doctors_view'  id=Doc.id %}">{{ Doc.title }}</a>
+                {% endfor %}
+
+              </div>
+             
+            </div>
+            <h2 class="post-title h1">{{ doctury.title }}</h2>
+            <div class="post-content">
+              <p>{{ doctury.text|safe }}</p>
+
+            </div>
+
+          </article> <!-- .blog-details -->
+
+        </div>
+        <div class="col-lg-4">
+          <div class="sidebar">
+            {% include "mainapp/includes/inchlude.html" %}
+        
+
+
+          </div>
+        </div> 
+      </div> <!-- .row -->
+    </div> <!-- .container -->
+  </div> <!-- .page-section -->
+
+
+
+{% endblock main %}
+
+

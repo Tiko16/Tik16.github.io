@@ -1,0 +1,30 @@
+{% load i18n %}
+
+<div class="sidebar-block">
+    <h3 class="sidebar-title">{% trans "Կատեգորիաներ" %}</h3>
+    {% for categor in category %}
+    <ul class="categories">
+      <li><a href="{% url 'categorylast' slug=categor.slug %}">{{ categor.title  }} </a></li>
+    
+   
+    </ul>
+    {% endfor %}
+  </div>
+  <div class="sidebar-block">
+    <h3 class="sidebar-title">{% trans "Լավագույն նորություներ" %}</h3>
+    {% for a in recent %}
+    <div class="blog-item">
+      <a class="post-thumb" href="{% url 'News_page_get_View' id=a.id %}">
+        <img src="{{ a.image.url }}" alt="">
+      </a>
+      <div class="content">
+        <h5 class="post-title"><a href="#">{{ a.title }}</a></h5>
+        <div class="meta">
+          <a href="#"><span class="mai-calendar"></span> {{ a.data }}</a>
+          <a href="#"><span class="mai-person"></span> {% if rec.doctory.title|length > 5 %}{{ a.doctory.title|truncatechars_html:6 }}{% else %}{{ a.doctory.title }} {% endif %}</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+</div>

@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+<div class="page-banner overlay-dark bg-image" style="background-image: url(
+  {% for a in slidecontext  %}
+ {{ a.slide.url }}
+{% endfor %}
+);">
+
+ <div class="banner-section">
+   <div class="container text-center wow fadeInUp">
+     <nav aria-label="Breadcrumb">
+       <ol class="breadcrumb breadcrumb-dark bg-transparent justify-content-center py-0 mb-2">
+         <li class="breadcrumb-item"><a href="{% url 'Index_View' %}">Home</a></li>
+         <li class="breadcrumb-item active" aria-current="page">News</li>
+       </ol>
+     </nav>
+     <h1 class="font-weight-normal">News</h1>
+   </div> <!-- .container -->
+ </div> <!-- .banner-section -->
+</div> <!-- .page-banner -->
+
+
+  <div class="page-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="row">
+              {% for Post in object_list %}
+            <div class="col-sm-6 py-3">
+              <div class="card-blog">
+                <div class="header">
+                  <div class="post-category">
+                    <a href="{% url 'News_page_get_View' id=Post.id %}">{{ Post.category }}</a>
+                  </div>
+                  <a href="blog-details" class="post-thumb">
+                    <img src="{{ Post.image.url }}" alt="">
+                  </a>
+                </div>
+                <div class="body">
+                  <h5 class="post-title"><a href="{% url 'News_page_get_View' id=Post.id %}">{{ Post.title }} </a></h5>
+                  <div class="site-info">
+                    <div class="avatar mr-2">
+                      <div class="avatar-img">
+                        <img src="{{ Post.doctory.image.url }}" alt="">
+                      </div>
+                      <span>{{ Post.doctory }}</span>
+                    </div>
+                    <span class="mai-time"></span> {{ Post.data }}
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+
+            
+            
+
+            <div class="col-12 my-5">
+              <nav aria-label="Page Navigation">
+                <ul class="pagination justify-content-center">
+                  {% if page_obj.has_previous %}
+
+                  <li class="page-item ">
+                    <a class="page-link" href="" tabindex="-1" aria-disabled="true"  >Previous</a>
+                  </li>
+                  {% endif %}
+                  {% for num_page in page_obj.paginator.page_range %}
+
+                <li class="page-item active" aria-current="page">
+                    <a class="page-link" href="{% url "News_page_View" %}?page={{ num_page }}">{{ num_page }} <span class="sr-only">(current)</span></a>
+                  </li> 
+                 {% endfor %}
+                  
+                  {% if page_obj.has_next %}
+
+                  <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.next_page_number }}" >Next</a>
+                  </li>
+                  {% endif %}
+                </ul>
+              </nav>
+            </div>
+          </div> <!-- .row -->
+        </div>
+        <div class="col-lg-4">
+          <div class="sidebar">
+            <div class="sidebar-block">
+              <h3 class="sidebar-title">Search</h3>
+              <form action="#" class="search-form" method="GET">
+                {% csrf_token %}
+                <div class="form-group">
+                  <input type="text" class="form-control" name="q" placeholder="Type a keyword and hit enter">
+                  <button type="submit" class="btn"><span class="icon mai-search"></span></button>
+                </div>
+              </form>
+            </div>
+            <div class="sidebar-block">
+              <h3 class="sidebar-title">Categories</h3>
+              <ul class="categories">
+                {% for category in category %}
+                <li><a href="{% url 'Category_View' slug=category.slug  %}">{{ category.title  }} </a></li>
+                {% endfor %}
+              </ul>
+            </div>
+
+            <div class="sidebar-block">
+              <h3 class="sidebar-title">Recent Blog</h3>
+              {% for rec in recent %}
+              <div class="blog-item">
+                <a class="post-thumb" href="">
+                  <img src="{{ rec.image.url }}" alt="">
+                </a>
+                <div class="content">
+                  <h5 class="post-title"><a href="{% url 'News_page_get_View' id=rec.id %}">{{ rec.title }}</a></h5>
+                  <div class="meta">
+                    <a href="#"><span class="mai-calendar"></span> July 12, 2018</a>
+                    <a href="#"><span class="mai-person"></span> Admin</a>
+                    <a href="#"><span class="mai-chatbubbles"></span> 19</a>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+
+            {% comment %} <div class="sidebar-block">
+              <h3 class="sidebar-title">Tag Cloud</h3>
+              <div class="tagcloud">
+                <a href="#" class="tag-cloud-link">dish</a>
+                <a href="#" class="tag-cloud-link">menu</a>
+                <a href="#" class="tag-cloud-link">food</a>
+                <a href="#" class="tag-cloud-link">sweet</a>
+                <a href="#" class="tag-cloud-link">tasty</a>
+                <a href="#" class="tag-cloud-link">delicious</a>
+                <a href="#" class="tag-cloud-link">desserts</a>
+                <a href="#" class="tag-cloud-link">drinks</a>
+              </div>
+            </div> {% endcomment %}
+
+            <div class="sidebar-block">
+              <h3 class="sidebar-title">Paragraph</h3>
+              {% if request.user.is_authenticated %}{{ request.user.get_full_name }}{% endif %}
+              <p>{% for news_text_page in news_text_page %}
+                {{ news_text_page.texti|safe }}
+                {% endfor %}</p>
+            </div>
+          </div>
+        </div> 
+      </div> <!-- .row -->
+    </div> <!-- .container -->
+  </div> <!-- .page-section -->
+
+  <div class="page-section banner-home bg-image" style="background-image: url(../assets/img/banner-pattern.svg);">
+    <div class="container py-5 py-lg-0">
+      <div class="row align-items-center">
+        <div class="col-lg-4 wow zoomIn">
+          <div class="img-banner d-none d-lg-block">
+            <img src="../assets/img/mobile_app.png" alt="">
+          </div>
+        </div>
+        <div class="col-lg-8 wow fadeInRight">
+          <h1 class="font-weight-normal mb-3">Get easy access of all features using One Health Application</h1>
+          <a href="#"><img src="../assets/img/google_play.svg" alt=""></a>
+          <a href="#" class="ml-2"><img src="../assets/img/app_store.svg" alt=""></a>
+        </div>
+      </div> <!-- .row -->
+    </div> <!-- .container -->
+  </div> 
+
+  <script src="https://unpkg.com/vue@next"></script>
+
+{% endblock main %}
+

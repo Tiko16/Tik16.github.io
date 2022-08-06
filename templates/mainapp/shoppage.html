@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<div class="page-section pt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <nav aria-label="Breadcrumb">
+            <ol class="breadcrumb bg-transparent py-0 mb-5">
+              <li class="breadcrumb-item"><a href="{% url 'Index_View' %}">Home</a></li>
+              <li class="breadcrumb-item"><a href="{% url 'shop_View' %}">shop</a></li>
+              <li class="breadcrumb-item active" aria-current="page">{{ shoppage.title }}</li>
+            </ol>
+          </nav>
+        </div>
+      </div> <!-- .row -->
+
+      <div class="row">
+        <div class="col-lg-8">
+          <article class="blog-details">
+            <div class="post-thumb">
+              <img src="{{ shoppage.image.url }}" alt="">
+            </div>
+            <div class="post-meta">
+   
+              <span class="divider">|</span>
+              <div>
+                <a href="#">{{ shoppage.category }}</a>  
+              </div>
+              <span class="divider">|</span>
+              <div class="post-comment-count">
+              </div>
+            </div>
+            <h2 class="post-title h1">{{ shoppage.title }}</h2>
+            <div class="post-content">
+              <p>{{ shoppage.text }}</p>
+
+            </div>
+
+          </article> 
+
+       
+        </div>
+        <div class="col-lg-4">
+          <div class="sidebar">
+      
+                   {% include "mainapp/includes/inchlude.html" %}
+
+            </div>
+
+    
+          </div>
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+
+
+
+{% endblock main %}

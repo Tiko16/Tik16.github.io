@@ -1,0 +1,407 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+<div class="page-banner overlay-dark bg-image" style="background-image: url(
+  {% for a in slidecontext  %}
+ {{ a.slide.url }}
+{% endfor %}
+);">
+
+ <div class="banner-section">
+   <div class="container text-center wow fadeInUp">
+     <nav aria-label="Breadcrumb">
+       <ol class="breadcrumb breadcrumb-dark bg-transparent justify-content-center py-0 mb-2">
+         <li class="breadcrumb-item"><a href="{% url 'Index_View' %}">Home</a></li>
+         <li class="breadcrumb-item active" aria-current="page">Home</li>
+       </ol>
+     </nav>
+     <h1 class="font-weight-normal">Home</h1>
+   </div> <!-- .container -->
+ </div> <!-- .banner-section -->
+</div> <!-- .page-banner -->
+
+<div class="bg-light">
+    <div class="page-section py-3 mt-md-n5 custom-index">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-4 py-3 py-md-0">
+            <div class="card-service wow fadeInUp">
+              <div class="circle-shape bg-secondary text-white">
+                <span class="mai-chatbubbles-outline"></span>
+              </div>
+              <p><span>Chat</span> with a doctors</p>
+            </div>
+          </div>
+          <div class="col-md-4 py-3 py-md-0">
+            <div class="card-service wow fadeInUp">
+              <div class="circle-shape bg-primary text-white">
+                <span class="mai-shield-checkmark"></span>
+              </div>
+              <p><span>One</span>-Health Protection</p>
+            </div>
+          </div>
+          <div class="col-md-4 py-3 py-md-0">
+            <div class="card-service wow fadeInUp">
+              <div class="circle-shape bg-accent text-white">
+                <span class="mai-basket"></span>
+              </div>
+              <p><span>One</span>-Health Pharmacy</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> <!-- .page-section -->
+
+ 
+
+    <div class="page-section pb-0">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 py-3 wow fadeInUp">
+            <h1>{{ v.title }} </h1>
+            <p class="text-grey mb-4">{{ v.text|safe }}</p>
+            <a href="about.html" class="  btn btn-primary  ">Learn More</a>
+          </div>
+          <div class="col-lg-6 wow fadeInRight" data-wow-delay="400ms">
+            <div class="img-place custom-img-1">
+              <img src="{{ v.image.url }}" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> <!-- .bg-light -->
+  </div> <!-- .bg-light -->
+
+
+ <div class="page-section bg-light">
+    <div class="container">
+      <h2>ցարայեւթյուներ</h2>
+
+      <div class="row">
+        <div id="ape" class="col-md-12 col-lg-3 pb-10 wow fadeInLeft">
+          <div class="h-100 py-5 services-icon-wap ">
+              <div class="h5 text-success text-center">              <img src="https://cosmolab.am/wp-content/uploads/2021/01/2.png"  >
+              </div>
+              <h2 class="h6 mt-8 text-center">Delivery Serviceshbjkhbhbjh</h2>
+          </div>
+      </div>          
+        <div id="ape" class="col-md-12 col-lg-3 pb-10  wow fadeInLeft ">
+          <div class="h-100 py-5 services-icon-wap ">
+              <div class="h5 text-success text-center"> <img src="https://cosmolab.am/wp-content/uploads/2021/01/3.png" class="hoverable" >
+              </div>
+              <h2 class="h6 mt-8 text-center">Delivery Serviceshbjkhbhbjh</h2>
+          </div>
+      </div>          
+        <div id="ape" class="col-md-12 col-lg-3 pb-10  wow fadeInLeft">
+          <div class="h-100 py-5 services-icon-wap ">
+              <div class="h5 text-success text-center">              <img src="https://cosmolab.am/wp-content/uploads/2021/02/6-1.png" >
+              </div>
+              <h2 class="h6 mt-8 text-center">Delivery Serviceshbjkhbhbjh</h2>
+          </div>
+      </div>          
+        <div id="ape" class="col-md-12 col-lg-3 pb-10  wow fadeInLeft">
+          <div class="h-100 py-5 services-icon-wap ">
+              <div class="h5 text-success text-center">              <img src="https://cosmolab.am/wp-content/uploads/2021/01/5.png" >
+              </div>
+              <h2 class="h6 mt-8 text-center">Delivery Serviceshbjkhbhbjh</h2>
+          </div>
+      </div>          
+        <div id="ape" class="col-md-12 col-lg-3 pb-10  wow fadeInRight">
+          <div class="h-100 py-5 services-icon-wap ">
+              <div class="h5 text-success text-center">              <img src="https://cosmolab.am/wp-content/uploads/2021/01/6.png" >
+              </div>
+              <h2 class="h6 mt-8 text-center">Delivery Serviceshbjkhbhbjh</h2>
+          </div>
+      </div>          
+        <div id="ape" class="col-md-12 col-lg-3 pb-10  wow fadeInRight">
+          <div class="h-100 py-5 services-icon-wap ">
+              <div class="h5 text-success text-center">              <img src="https://cosmolab.am/wp-content/uploads/2021/01/7.png" >
+              </div>
+              <h2 class="h6 mt-8 text-center">Delivery Serviceshbjkhbhbjh</h2>
+          </div>
+      </div>          
+        <div id="ape" class="col-md-12 col-lg-3 pb-10  wow fadeInRight">
+          <div class="h-100 py-5 services-icon-wap ">
+              <div class="h5 text-success text-center">              <img src="https://cosmolab.am/wp-content/uploads/2021/01/8.png" >
+              </div>
+              <h2 class="h6 mt-8 text-center">Delivery Serviceshbjkhbhbjh</h2>
+          </div>
+      </div>          
+        <div id="ape" class="col-md-12 col-lg-3 pb-10  wow fadeInRight">
+          <div class="h-100 py-5 services-icon-wap ">
+              <div class="h5 text-success text-center">              <img src="https://cosmolab.am/wp-content/uploads/2021/01/2.png" >
+              </div>
+              <h2 class="h6 mt-8 text-center">Delivery Serviceshbjkhbhbjh</h2>
+          </div>
+      </div>          
+             
+      
+      <style>
+        #ape{
+          transition: 1s;
+        }
+        #ape:hover{
+          transition: 1s;
+          box-shadow: 0 1px 1px rgba(59, 54, 54, 0.16), 0 1px 50px rgba(79, 65, 65, 0.23)
+        }
+      </style>        
+              
+          {% comment %} <div class="card-service">
+            <div class="circle-shape bg-secondary text-white">
+              <span class="mai-chatbubbles-outline"></span>
+            </div>
+            <p><span>Chat</span> with a dondcjkdncjk dfvnkdct ors</p>
+          </div>
+        </div>
+        <div class="col-md-4 py-3 wow zoomIn">
+          <div class="card-service">
+              <img src="https://cosmolab.am/wp-content/uploads/2021/01/2.png" >
+            <p><span>OneԴԻՈԴԱՅԻՆ ՄԱԶԱՀԵՌԱՑՈՒՄ </span></p>
+          </div>
+        </div>
+        <div class="col-md-4 py-3 wow fadeInRight">
+          <div class="card-service">
+              <img src="https://cosmolab.am/wp-content/uploads/2021/01/1.png" >
+              
+            <p><span>One</span>-Health Pharmacyscdv jhdbfvhj</p>
+          </div>
+        </div>
+        <div class="col-md-4 py-3 wow zoomIn">
+          <div class="card-service">
+              <img src="https://cosmolab.am/wp-content/uploads/2021/01/1.png" >
+              
+            <p><span>One</span>-Health Pharmacy</p>
+          </div>
+        </div>
+        <div class="col-md-4 py-3 wow zoomIn">
+          <div class="card-service">
+              <img src="https://cosmolab.am/wp-content/uploads/2021/01/1.png" >
+              
+            <p><span>One</span>-Health Pharmacy</p>
+          </div>
+        </div>
+        <div class="col-md-4 py-3 wow zoomIn">
+          <div class="card-service">
+              <img src="https://cosmolab.am/wp-content/uploads/2021/01/1.png" >
+              
+            <p><span>One</span>-Health Pharmacy</p>
+          </div>
+        </div>
+        <div class="col-md-4 py-3 wow zoomIn">
+          <div class="card-service">
+              <img src="https://cosmolab.am/wp-content/uploads/2021/01/1.png" >
+              
+            <p><span>One</span>-Health Pharmacy</p>
+          </div>
+        </div>
+        <div class="col-md-4 py-3 wow zoomIn">
+          <div class="card-service">
+              <img src="https://cosmolab.am/wp-content/uploads/2021/01/1.png" >
+              
+            <p><span>One</span>-Health Pharmacy</p>
+          </div>
+        </div>
+        <div class="col-md-4 py-3 wow zoomIn">
+          <div class="card-service">
+              <img src="https://cosmolab.am/wp-content/uploads/2021/01/1.png" >
+              
+            <p><span>One</span>-Health Pharmacy</p>
+          </div>
+        </div>
+        <div class="col-md-4 py-3 wow zoomIn">
+          <div class="card-service">
+              <img src="https://cosmolab.am/wp-content/uploads/2021/01/1.png" >
+              
+            <p><span>One</span>-Health Pharmacy</p>
+          </div>
+        </div>
+        <div class="col-md-4 py-3 wow zoomIn">
+          <div class="card-service">
+              <img src="https://cosmolab.am/wp-content/uploads/2021/01/1.png" >
+              
+            <p><span>One</span>-Health Pharmacy</p>
+          </div>
+        </div>
+        <div class="col-md-4 py-3 wow zoomIn">
+          <div class="card-service">
+              <img src="https://cosmolab.am/wp-content/uploads/2021/01/1.png" >
+              
+            <p><span>One</span>-Health Pharmacy</p>
+          </div>
+        </div>
+        <div class="col-md-4 py-3 wow zoomIn">
+          <div class="card-service">
+              <img src="https://cosmolab.am/wp-content/uploads/2021/01/1.png" >
+              
+            <p><span>One</span>-Health Pharmacy</p>
+          </div>
+        </div>
+        <div class="col-md-4 py-3 wow zoomIn">
+          <div class="card-service">
+              <img src="https://cosmolab.am/wp-content/uploads/2021/01/1.png" >
+              
+            <p><span>One</span>-Health Pharmacy</p>
+          </div>
+        </div>
+        <div class="col-md-4 py-3 wow zoomIn">
+          <div class="card-service">
+              <img src="https://cosmolab.am/wp-content/uploads/2021/01/1.png" >
+              
+            <p><span>One</span>-Health Pharmacy</p>
+          </div>
+        </div> {% endcomment %}
+      </div>
+    </div>
+  </div> 
+
+  <div class="page-section">
+    <div class="container">
+      {% comment %} {% for a in Doctors %}
+      <div class="owl-carousel wow fadeInUp" id="doctorSlideshow">
+        <div class="item">
+          <div class="card-doctor">
+            <div class="header">
+              <img src="{{ a.image.url }}" alt="">
+              <div class="meta">
+                <a href="#"><span class="mai-call"></span></a>
+                <a href="#"><span class="mai-logo-whatsapp"></span></a>
+              </div>
+            </div>
+            <div class="body">
+              <p class="text-xl mb-0">{{ a.title }}</p>
+              <span class="text-sm text-grey">Cardiology</span>
+            </div>
+          </div>
+        </div>
+        {% endfor %} {% endcomment %}
+        <div class="col-lg-10 mt-5">
+          <h1 class="text-center mb-5 wow fadeInUp">Our Doctors</h1>
+          <div class="row justify-content-center">
+           {% for a in Doctors %}
+            <div class="col-md-6 col-lg-4 wow zoomIn">
+              <div class="card-doctor">
+                <div class="header">
+                  <img src="{{ a.image.url }}" alt="">
+                  <div class="meta">
+                    <a href="#"><span class="mai-call"></span></a>
+                    <a href="#"><span class="mai-logo-whatsapp"></span></a>
+                  </div>
+                </div>
+                <div class="body">
+                  <p class="text-xl mb-0">{{ a.title }}</p>
+                  <span class="text-sm text-grey">{{ a.categoris }}</span>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+
+
+          </div>
+        </div>
+   
+       
+      </div>
+    </div>
+  </div>
+
+  
+
+  <div class="page-section bg-light">
+    <div class="container">
+      <h1 class="text-center wow fadeInUp">Latest News</h1>
+      <div class="row mt-5">
+        {% for Post in Post %}
+        {% if Post.rec %}
+        <div class="col-lg-4 py-2 wow zoomIn">
+          <div class="card-blog">
+            <div class="header">
+              <div class="post-category">
+                <a href="#">Covid19</a>
+              </div>
+              <a href="blog-details.html" class="post-thumb">
+                <img src="{{ Post.image.url }}" alt="">
+              </a>
+            </div>
+            <div class="body">
+              <h5 class="post-title"><a href="{% url 'News_page_get_View' id=Post.id %}">{{ Post.title }}</a></h5>
+              <div class="site-info">
+                <div class="avatar mr-2">
+                  <div class="avatar-img">
+                    <img src="{{ Post.doctory.image.url }}" alt="">
+                  </div>
+                  <span>{{ Post.doctory }}</span>
+                </div>
+                <span class="mai-time"></span>{{ Post.data }}
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+       
+
+        <div class="col-12 text-center mt-4 wow zoomIn">
+          <a href="blog.html" class="btn btn-primary">Read More</a>
+        </div>
+
+      </div>
+    </div>
+  </div> <!-- .page-section -->
+
+  <div class="page-section">
+    <div class="container">
+      <h1 class="text-center wow fadeInUp">Make an Appointment</h1>
+
+      <form class="main-form">
+        <div class="row mt-5 ">
+          <div class="col-12 col-sm-6 py-2 wow fadeInLeft">
+            <input type="text" class="form-control" placeholder="Full name">
+          </div>
+          <div class="col-12 col-sm-6 py-2 wow fadeInRight">
+            <input type="text" class="form-control" placeholder="Email address..">
+          </div>
+          <div class="col-12 col-sm-6 py-2 wow fadeInLeft" data-wow-delay="300ms">
+            <input type="date" class="form-control">
+          </div>
+          <div class="col-12 col-sm-6 py-2 wow fadeInRight" data-wow-delay="300ms">
+            <select name="departement" id="departement" class="custom-select">
+              <option value="general">General Health</option>
+              <option value="cardiology">Cardiology</option>
+              <option value="dental">Dental</option>
+              <option value="neurology">Neurology</option>
+              <option value="orthopaedics">Orthopaedics</option>
+            </select>
+          </div>
+          <div class="col-12 py-2 wow fadeInUp" data-wow-delay="300ms">
+            <input type="text" class="form-control" placeholder="Number..">
+          </div>
+          <div class="col-12 py-2 wow fadeInUp" data-wow-delay="300ms">
+            <textarea name="message" id="message" class="form-control" rows="6" placeholder="Enter message.."></textarea>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-3 wow zoomIn">Submit Request</button>
+      </form>
+    </div>
+  </div> <!-- .page-section -->
+
+  <div class="page-section banner-home bg-image" style="background-image: url(../assets/img/banner-pattern.svg);">
+    <div class="container py-5 py-lg-0">
+      <div class="row align-items-center">
+        <div class="col-lg-4 wow zoomIn">
+          <div class="img-banner d-none d-lg-block">
+            <img src="{% static "../static/img/mobile_app.png"  %}" alt="">
+          </div>
+        </div>
+        <div class="col-lg-8 wow fadeInRight">
+          <h1 class="font-weight-normal mb-3">Get easy access of all features using One Health Application</h1>
+          <a href="#"><img src="https://cosmolab.am/wp-content/uploads/2021/01/2.png" alt=""></a>
+          <a href="#" class="ml-2"><img src="{% static "../static/img/app_store.svg" %}" alt=""></a>
+        </div>
+      </div>
+    </div>
+  </div> <!-- .banner-home -->
+
+  
+
+{% endblock main %}
